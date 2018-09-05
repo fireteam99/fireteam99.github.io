@@ -2,6 +2,7 @@
 :root {
     --animation-time: 2s; 
 }
+
 .rain-drop {
     background-color: rgba( 211, 224, 237, 0.112 );
     position: fixed;
@@ -19,18 +20,24 @@
     animation: float var(--animation-time) ease-in-out infinite;
 }
 
+body {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
 .background {
-    height: 100%;
     width: 100%;
     z-index: 0;
-    
-    
+
+
     /* if  radial gradient screws up */
     background-color: #222c3e;
     background: linear-gradient(to bottom, #6D848B, #222c3e);
-    background-image: linear-gradient(-125deg, #6D848B , #222c3e);
-    
-    
+    background-image: linear-gradient(-125deg, #6D848B , #222c3e) fixed;
+
+
     background-image: radial-gradient(#6D848B, #222c3e);
     background: -moz-radial-gradient(#6D848B, #222c3e); /* FF3.6+ */
     background: -webkit-gradient(circle, #6D848B, #222c3e); /* Chrome,Safari4+ */
@@ -54,10 +61,10 @@
 
 .container {
     padding-top: 6em;
-     box-sizing:border-box;  /** add this **/
- -moz-box-sizing:border-box; /** add this **/
- -webkit-box-sizing:border-box; /** add this **/
- -ms-box-sizing:border-box; /** add this **/
+    box-sizing:border-box;  /** add this **/
+    -moz-box-sizing:border-box; /** add this **/
+    -webkit-box-sizing:border-box; /** add this **/
+    -ms-box-sizing:border-box; /** add this **/
     z-index: 100
     position: relative;
 }
@@ -82,7 +89,7 @@
 .link {
     color: #098484;
     font-family: "Work Sans", sans-serif;
-    transition: color .5s ease;
+    transition: color .3s ease;
 }
 
 .link:hover {
@@ -198,9 +205,31 @@
         transform: translatey(0px);
     }
 }
-body {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+/* Desktops and TVs */
+@media only screen and (min-height: 866px) {
+    .background {
+        height: 100%;
+    }
 }
+/*  Laptops  */
+@media only screen and (max-height: 866px) {
+    .body {
+        min-height: 100%;
+    }
+    .background {
+        min-height: 100%;
+    }
+    .container {
+        padding-top: 3em;
+    }
+}
+
+@media only screen and (max-height: 786px) {
+    .container {
+        padding-top: 3em;
+    }
+    .link-box-wrapper {
+        margin-top: 1em;
+    }
+}
+
