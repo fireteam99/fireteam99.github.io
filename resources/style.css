@@ -100,10 +100,6 @@ body {
     color: #237575;
 }
 
-.link:hover {
-
-}
-
 .personal-info {
     margin: .2em;
     font-size: 10pt
@@ -221,15 +217,27 @@ body {
         min-height: 100%;
     }
     .container {
-        padding-top: 3em;
+        padding-top: 1em;
     }
 }
 
 @media only screen and (max-height: 786px) {
     .container {
-        padding-top: 3em;
+        padding-top: 1em;
     }
     .link-box-wrapper {
+        margin-top: .5em;
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    .container {
+        padding-top: 1em;
+    }
+    .link-box-wrapper {
+        margin-top: .5em;
+    }
+    .link-container {
         margin-top: 1em;
     }
 }
