@@ -20,10 +20,16 @@
 }
 
 .background {
+    /* if  radial gradient screws up */
+    background-color: #222c3e;
+    background-image: linear-gradient(-125deg, #6D848B , #222c3e);
+    
+    
     background-image: radial-gradient(#6D848B, #222c3e);
     background: -moz-radial-gradient(#6D848B, #222c3e); /* FF3.6+ */
     background: -webkit-gradient(circle, #6D848B, #222c3e); /* Chrome,Safari4+ */
     background: -webkit-radial-gradient(#6D848B 0%,#222c3e 100%); /* Chrome10+,Safari5.1+ */
+    background-image: -webkit-radial-gradient(circle, #6D848B, #222c3e);
     background: -o-radial-gradient(#6D848B 0%,#222c3e 100%); /* Opera 11.10+ */
     background: -ms-radial-gradient(#6D848B 0%,#222c3e 100%); /* IE10+ */
     position: relative;
