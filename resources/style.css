@@ -122,6 +122,7 @@ body {
 }
 
 .link-box-warapper {
+    padding-top: 5em
     text-align: center;
     display: block;
 }
@@ -233,3 +234,26 @@ body {
     }
 }
 
+/* Large Tablets (portrait) */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+      .container {
+          padding-top: 10em;
+      }
+    .link-box-wrapper {
+            margin-top: 8em;
+        }
+}
+
+/* Big smartphones (portrait) (ie: Galaxy 3 has 360)*/
+@media only screen and (max-width : 640px) {
+    .info-card {
+        width: 18em;
+    }
+    .link-box-wrapper {
+        margin-top: 1em;
+    }
+}
