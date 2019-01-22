@@ -1,5 +1,5 @@
-const NUM_RAINDROPS = 100;
-const NUM_LILYPADS = 7;
+const NUM_RAINDROPS = 60;
+const NUM_LILYPADS = 6;
 
 $(document).ready(function(){    
     function freshDot() {
@@ -49,7 +49,7 @@ $(document).ready(function(){
         for(let i = 0 ; i < numLilypads; i++){
             pads.push(new freshLilypad());
         }
-        let allRenderedpads = $(".lily-pads");
+        let allRenderedpads = $(".lily-pad");
         for (let i = 0 ; i < numLilypads; i++) {
             allRenderedpads[i].style.setProperty('--animation-time', generateRandom(6, 12) + 's');
         }
