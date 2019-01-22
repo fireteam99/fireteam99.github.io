@@ -1,53 +1,78 @@
-$(document).ready(function(){
-//    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-//    if (!isSafari) {
-        function freshDot(){
-            this.obj = document.createElement("div");
-            this.obj.classList.add("rain-drop");
-            this.obj.style.top = (window.innerHeight * Math.random()) + 'px';
-            this.obj.style.left = (window.innerWidth * Math.random()) + 'px';
-            this.size = Math.floor(5 * Math.random()) + 7;
-            this.obj.style.height =  this.size + 'px';
-            this.obj.style.width = this.size + 'px';
+const NUM_RAINDROPS = 100;
+const NUM_LILYPADS = 7;
 
-            $(".background").append(this.obj);
-        }
-        var dot = [];
-        for(var i = 0 ; i < 200 ; i++ ){
-            dot.push(new freshDot());
-        }
-        var allRenderedDots = $(".rain-drop");
-        for (var i = 0 ; i < 200 ; i++ ) {
-            allRenderedDots[i].style.setProperty('--animation-time', generateRandom(2, 10)+ 's');
-        }
+$(document).ready(function(){    
+    function freshDot() {
+        this.obj = document.createElement("div");
+        this.obj.classList.add("rain-drop");
+        this.obj.style.top = (window.innerHeight * Math.random()) + 'px';
+        this.obj.style.left = (window.innerWidth * Math.random()) + 'px';
+        this.size = Math.floor(5 * Math.random()) + 7;
+        this.obj.style.height =  this.size + 'px';
+        this.obj.style.width = this.size + 'px';
 
-        function freshLilyPad() {
-            this.obj = document.createElement("div");
-            this.obj.classList.add("lily-pad");
-            this.obj.style.top = (window.innerHeight * Math.random()) + 'px';
-            this.obj.style.left = (window.innerWidth * Math.random()) + 'px';
-            this.size = Math.floor(5 * generateRandom(1, 15)) + 50;
-            this.obj.style.height =  (this.size) + 'px';
-            this.obj.style.width = (this.size) + 'px';
-            
-            $(".background").append(this.obj)
-        }
-        var pad = [];
-        for(var i = 0 ; i < 10 ; i++ ){
-            dot.push(new freshLilyPad());
-        }
-        var allRenderedPads = $(".lily-pad");
-        for (var i = 0 ; i < 10 ; i++ ) {
-            allRenderedPads[i].style.setProperty('--animation-time', generateRandom(6, 12) + 's');
-        }
-//    }
+        $(".background").append(this.obj);
+    }
     
-//  $(window).resize(function(){
-//    for(i=0;i<200;i++){
-//      document.body.removeChild(dot[i]);
-//    }
-//  });
-  
+    function generateDots(numRaindrops) {
+        let dots = [];
+        for(let i = 0 ; i < numRaindrops; i++ ){
+            dots.push(new freshDot());
+        }
+        let allRenderedots = $(".rain-drop");
+        for (let i = 0 ; i < numRaindrops ; i++ ) {
+            allRenderedots[i].style.setProperty('--animation-time', generateRandom(2, 10)+ 's');
+        }
+        return dots;
+    }
+    
+    const removeDots = (dots) => {
+        for (let dot of dots) {
+            document.body.removeChild(dots[i]);
+        }
+    }
+    
+    function freshLilypad() {
+        this.obj = document.createElement("div");
+        this.obj.classList.add("lily-pad");
+        this.obj.style.top = (window.innerHeight * Math.random()) + 'px';
+        this.obj.style.left = (window.innerWidth * Math.random()) + 'px';
+        this.size = Math.floor(5 * generateRandom(1, 15)) + 50;
+        this.obj.style.height =  (this.size) + 'px';
+        this.obj.style.width = (this.size) + 'px';
+
+        $(".background").append(this.obj)
+    }
+    
+    function generatePads(numLilypads) {
+        let pads = [];
+        for(let i = 0 ; i < numLilypads; i++){
+            pads.push(new freshLilypad());
+        }
+        let allRenderedpads = $(".lily-pads");
+        for (let i = 0 ; i < numLilypads; i++) {
+            allRenderedpads[i].style.setProperty('--animation-time', generateRandom(6, 12) + 's');
+        }
+        return pads;
+    }
+    
+    const removePads = (pads) => {
+        for (let pad of pads) {
+            document.body.removeChild(pads[i]);
+        }
+    }
+    
+    let allDots = generateDots(NUM_RAINDROPS);
+    let allPads = generatePads(NUM_LILYPADS);
+    
+    // upon resize
+//    $(window).resize(function(){
+//        removeDots(allDots);
+//        removePads(allPads);
+//        allDots = generateDots;
+//        allPads = generatePads;
+//    });
+
 });
 
 function generateRandom(min, max) {
