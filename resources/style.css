@@ -1,6 +1,6 @@
 /* set the default transition time */
 :root {
-    --animation-time: 2s; 
+    --animation-time: 2s;
 }
 
 .rain-drop {
@@ -19,6 +19,17 @@
     z-index: -50;
     animation: float var(--animation-time) ease-in-out infinite;
 }
+
+/* .lily-pad {
+  background-color: transparent;
+  border-radius: 50%;
+  position: fixed;
+  z-index: -50;
+  border-style: solid;
+  border-width: 5em;
+  border-color: red green blue transparent;
+  animation: float var(--animation-time) ease-in-out infinite;
+} */
 
 body {
     margin-top: 0px;
@@ -243,10 +254,10 @@ body {
 }
 
 /* Large Tablets (portrait) */
-@media only screen 
-  and (min-device-width: 1024px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 2) {
       .container {
           padding-top: 10em;
