@@ -408,6 +408,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
         height: 18em;
         flex-basis: 18em;
     }
+    .project-card {
+        max-width: 42em;
+    }
 }
 
 @media only screen and (max-width: 1396px) {
