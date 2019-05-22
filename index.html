@@ -1,74 +1,188 @@
 <html>
-    <head>
-        <!-- Favcon Stuff -->
-        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="resources/favicomatic/apple-touch-icon-57x57.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/favicomatic/apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/favicomatic/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/favicomatic/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="resources/favicomatic/apple-touch-icon-60x60.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="resources/favicomatic/apple-touch-icon-120x120.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="resources/favicomatic/apple-touch-icon-76x76.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="resources/favicomatic/apple-touch-icon-152x152.png" />
-        <link rel="icon" type="image/png" href="resources/favicomatic/favicon-196x196.png" sizes="196x196" />
-        <link rel="icon" type="image/png" href="resources/favicomatic/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/png" href="resources/favicomatic/favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="resources/favicomatic/favicon-16x16.png" sizes="16x16" />
-        <link rel="icon" type="image/png" href="resources/favicomatic/favicon-128.png" sizes="128x128" />
-        <meta name="application-name" content="&nbsp;"/>
-        <meta name="msapplication-TileColor" content="#FFFFFF" />
-        <meta name="msapplication-TileImage" content="mstile-144x144.png" />
-        <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
-        <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
-        <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
-        <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
-        <!-- Fixes chrome mobile view issues -->
-        <meta name="viewport" content="width=device-width">
-        <title>Ray Sy</title>
-        <link href="https://fonts.googleapis.com/css?family=Space+Mono|Work+Sans" rel="stylesheet">
-        <link rel="stylesheet" href="resources/style.css">
-    </head>
-    <body>
-        <div class="background">
-            <header>
-                <div class="container">
-                    <div class="profile">
-                        <img class="pro-pic" src="resources/images/profile_pic2.jpg" alt="Profile Pic">
-                        <div class="card-wrapper">
-                            <div class="info-card">
-                                <p class="header">Ray Sy</p>
-                                <div class="personal-info-box">
-                                    <p class="body-text personal-info">Rutgers University 2021 CS</p>
-                                    <a class="link personal-info" href="https://yihanz.com/heatwav/#heat">Heat.wav</a>
-                                    <p class="body-text personal-info">main: <a class="link" href="mailto:raysydev@gmail.com">raysydev@gmail.com</a></p>
-                                    <p class="body-text personal-info">alt: <a class="link" href="mailto:rs1593@scarletmail.rutgers.edu">rs1593@scarletmail.rutgers.edu</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="link-box-wrapper">
-                        <div class="link-box">
-                            <div class="link-container">
-                                <a class="link-big" href="https://github.com/fireteam99">Github</a>
-                            </div>
-                            <div class="link-container">
-                                <a class= "link-big" href="https://devpost.com/fireteam?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">Devpost</a>
-                            </div>
-                            <div class="link-container">
-                                <a class="link-big" href="https://www.linkedin.com/in/ray-sy-a41ba616b/">LinkedIn</a>
-                            </div>
-                            <div class="link-container">
-                                <a class="link-big" href="resources/resume(1:17:19).pdf" download>Resume</a>
+<head>
+    <!-- Favcon Stuff -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="resources/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="resources/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="resources/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="resources/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="resources/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="resources/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="resources/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="resources/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="resources/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="resources/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <!-- Fixes chrome mobile view issues -->
+    <meta name="viewport" content="width=device-width">
+    <title>Ray Sy</title>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono|Work+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="resources/style.css">
+</head>
+<body>
+    <div class="background">
+        <header class="title-screen">
+            <div class="container">
+                <div class="profile">
+                    <img class="pro-pic" src="resources/images/profile_pic2.jpg" alt="Profile Pic">
+                    <div class="card-wrapper">
+                        <div class="card info-card">
+                            <p class="header-text">Ray Sy</p>
+                            <div class="personal-info-box">
+                                <p class="body-text personal-info">Rutgers University 2021 CS</p>
+                                <a class="link personal-info" href="https://yihanz.com/heatwav/#heat">Heat.wav</a>
+                                <p class="body-text personal-info">main: <a class="link" href="mailto:raysydev@gmail.com">raysydev@gmail.com</a></p>
+                                <p class="body-text personal-info">alt: <a class="link" href="mailto:rs1593@scarletmail.rutgers.edu">rs1593@scarletmail.rutgers.edu</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </header>
-        </div>
-        <script
-                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-                crossorigin="anonymous">
-        </script>
-        <script src="resources/script.js"></script>
-    </body>
+                <div class="link-box-wrapper">
+                    <div class="link-box">
+                        <div class="link-container">
+                            <a class="link-big" href="#projects">Projects</a>
+                        </div>
+                        <div class="link-container">
+                            <a class="link-big" href="#about">About</a>
+                        </div>
+                        <div class="link-container">
+                            <a class="link-big" href="https://github.com/fireteam99">Github</a>
+                        </div>
+                        <div class="link-container">
+                            <a class="link-big" href="resources/resume(1:17:19).pdf" download>Resume</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="projects" id="projects">
+            <div class="projects-heading">
+                <div class="project-heading-headers">
+                    <p class="header-text projects-header">Projects</p>
+                    <p class="body-text projects-subheader">Hackathons, personal projects, and other cool stuff.</p>
+                </div>
+                <hr class="hr">
+
+            </div>
+
+            <div class="year"><p class="header-text year-text">2019</p></div>
+
+            <div class="project-cards-container">
+
+                <div class="card project-card">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <div class="project-title">
+                                <p class="header-text">Project C.R.A.L.</p>
+                            </div>
+                            <div class="project-status">
+                                <span class="body-text status-text in-development">In Development</span>
+                            </div>
+                            <div class="project-description">
+                                <p class="body-text">A better way to register for Rutgers University courses.</p>
+                                <a class="link" href="#">More Info</a>
+                            </div>
+                        </div>
+                        <div class="project-image-container">
+                            <img class="project-image" src="resources/images/puppeteer.png" alt="puppeteer.png"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <div class="project-title">
+                                <p class="header-text">BuyMe</p>
+                            </div>
+                            <div class="project-status">
+                                <span class="body-text status-text finished">Finished</span>
+                            </div>
+                            <div class="project-description">
+                                <p class="body-text">A better way to register for Rutgers University courses.</p>
+                                <a class="link" href="#">More Info</a>
+                            </div>
+                        </div>
+                        <div class="project-image-container">
+                            <img class="project-image" src="resources/images/buyme.png" alt="buyme.png"/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="year"><p class="header-text year-text">2018</p></div>
+
+            <div class="project-cards-container">
+
+                <div class="card project-card">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <div class="project-title">
+                                <p class="header-text">heat.wav</p>
+                            </div>
+                            <div class="project-status">
+                                <span class="body-text status-text finished">In Development</span>
+                            </div>
+                            <div class="project-description">
+                                <p class="body-text">A better way to register for Rutgers University courses.</p>
+                                <a class="link" href="#">More Info</a>
+                            </div>
+                        </div>
+                        <div class="project-image-container">
+                            <img class="project-image" src="resources/images/buyme.png" alt="buyme.png"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <div class="project-title">
+                                <p class="header-text">Rutgers Course Searcher++</p>
+                            </div>
+                            <div class="project-status">
+                                <span class="body-text status-text finished">Finished</span>
+                            </div>
+                            <div class="project-description">
+                                <p class="body-text">A better way to register for Rutgers University courses.</p>
+                                <a class="link" href="#">More Info</a>
+                            </div>
+                        </div>
+                        <div class="project-image-container">
+                            <img class="project-image" src="resources/images/buyme.png" alt="buyme.png"/>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </section>
+        <section class="about" id="about">
+            <p>About Me</p>
+        </section>
+        <footer class="footer">
+            <a class="link" href="https://github.com/fireteam99">Github</a>
+            <a class= "link" href="https://devpost.com/fireteam?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">Devpost</a>
+            <a class="link" href="https://www.linkedin.com/in/ray-sy-a41ba616b/">LinkedIn</a>
+        </footer>
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous">
+    </script>
+    <script src="resources/script.js"></script>
+</body>
 </html>
