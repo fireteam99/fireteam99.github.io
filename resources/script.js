@@ -1,4 +1,4 @@
-const NUM_RAINDROPS = 65;
+const NUM_RAINDROPS = 40;
 // const NUM_LILYPADS = 6;
 
 $(document).ready(function(){
@@ -14,21 +14,21 @@ $(document).ready(function(){
         $(".background").append(this.obj);
     }
 
-    function generateDots(numRaindrops) {
+    function generateDots() {
         let dots = [];
-        for(let i = 0 ; i < numRaindrops; i++ ){
+        for(let i = 0; i < NUM_RAINDROPS; i++){
             dots.push(new freshDot());
         }
         let allRenderedots = $(".rain-drop");
-        for (let i = 0 ; i < numRaindrops ; i++ ) {
+        for (let i = 0 ; i < NUM_RAINDROPS ; i++ ) {
             allRenderedots[i].style.setProperty('--animation-time', generateRandom(2, 10)+ 's');
         }
         return dots;
     }
 
     const removeDots = (dots) => {
-        for (let dot of dots) {
-            document.body.removeChild(dots[i]);
+        for (let i = 0; i < NUM_RAINDROPS; i++) {
+          $(".rain-drop").remove();
         }
     }
 
@@ -62,16 +62,17 @@ $(document).ready(function(){
     //     }
     // }
 
-    let allDots = generateDots(NUM_RAINDROPS);
+    let allDots = generateDots();
     // let allPads = generatePads(NUM_LILYPADS);
 
     // upon resize
-//    $(window).resize(function(){
-//        removeDots(allDots);
-//        removePads(allPads);
-//        allDots = generateDots;
-//        allPads = generatePads;
-//    });
+   $(window).resize(function() {
+       console.log("resized");
+       removeDots(allDots);
+       // removePads(allPads);
+       allDots = generateDots();
+       // allPads = generatePads;
+   });
 
 });
 
