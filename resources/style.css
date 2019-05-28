@@ -35,7 +35,9 @@ animation: float var(--animation-time) ease-in-out infinite;
     margin: 0;
     padding: 0;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     height: 100%;
@@ -347,11 +349,62 @@ body {
 }
 
 .about-card {
-    width: 90%;
+    width: 70%;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.about-description {
+    margin: 1em;
+    width: 30em;
+}
+
+.about-text {
+    text-indent: 1em;
+    margin-bottom: .5em;
+}
+
+.about-image-container {
+    margin: 1em;
+    height: auto;
+    width: 20em;
+}
+
+.about-image {
+    max-height: 100%;
+    max-width: 100%;
+    filter: drop-shadow(.1em .3em 1em rgb(132, 132, 132));
 }
 
 .footer {
-    background-color: transparent;
+    margin-top: 3em;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.896796218487395) 0%, rgba(255,255,255,0) 100%);
+}
+
+.footer-links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    margin: 1em;
+    font-family: "Space Mono", monospace;
+    font-size: 16pt;
+    color: #e2ffe2;
+    filter: drop-shadow(0 0 .5em rgba(188, 229, 188, 0.5));
+    transition: all 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #f9fff9;
+    filter: drop-shadow(0 0 .7em rgb(188, 229, 188));
 }
 
 
