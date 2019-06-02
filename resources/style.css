@@ -366,12 +366,13 @@ body {
 .about-text {
     text-indent: 1em;
     margin-bottom: .5em;
+    line-height: 1.5em;
 }
 
 .about-image-container {
     margin: 1em;
     height: auto;
-    width: 20em;
+    width: 21em;
 }
 
 .about-image {
