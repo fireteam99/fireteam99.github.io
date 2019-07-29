@@ -150,7 +150,7 @@ body {
     border-radius: 40%;
     color: whitesmoke;
     border: solid 0.05em whitesmoke;
-    background-color: #666666;
+    background-color: #494949;
 }
 
 .social-btn:active {
@@ -398,14 +398,13 @@ body {
     margin: 1em;
     font-family: "Space Mono", monospace;
     font-size: 16pt;
-    color: #e2ffe2;
-    filter: drop-shadow(0 0 .5em rgba(188, 229, 188, 0.5));
-    transition: all 0.2s ease;
+    color: #e2e7ff;
+    filter: drop-shadow(0 0 .5em rgba(235, 243, 250, 0.5));
+    transition: all 0.5s ease-in-out;
 }
 
 .footer-link:hover {
-    color: #f9fff9;
-    filter: drop-shadow(0 0 .7em rgb(188, 229, 188));
+    filter: drop-shadow(0 0 .7em rgb(235, 243, 250));
 }
 
 
