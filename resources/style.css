@@ -394,6 +394,10 @@ body {
     font-size: 18pt;
 }
 
+.footer-link:active {
+    font-size: 17pt;
+}
+
 
 @-webkit-keyframes pulse {
     0% {
