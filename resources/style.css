@@ -254,6 +254,12 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(40em, max-content));
 }
 
+.project-cards-container::after {
+  content: "";
+  flex: auto;
+}
+
+
 .project-card {
     width: auto;
     max-width: 47em;
