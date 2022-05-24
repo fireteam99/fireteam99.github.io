@@ -1,7 +1,15 @@
-import { Box, Heading, HStack, Text, VStack, Flex } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  HStack,
+  Text,
+  VStack,
+  Flex,
+  Link,
+} from '@chakra-ui/react';
 import Image from 'next/image';
 import PageWrapper from '../components/PageWrapper';
-import { intro, timeline } from '../data/home';
+import { intro, timeline, links } from '../data/home';
 
 export default function Home() {
   return (
@@ -15,7 +23,15 @@ export default function Home() {
           <VStack alignItems="start" w="100%">
             <VStack alignItems="start" spacing="1em">
               {timeline.map(
-                ({ organization, title, start, end, duration, logo, location }) => (
+                ({
+                  organization,
+                  title,
+                  start,
+                  end,
+                  duration,
+                  logo,
+                  location,
+                }) => (
                   <HStack key={organization + title} spacing="1em">
                     <Box width=".1em" bg="light" height="100%" />
                     <Flex padding=".4em" bg="gray.100" borderRadius="10%">
@@ -43,9 +59,7 @@ export default function Home() {
                             : `${start} - ${end || 'Present'}`}
                         </Text>
                         <Text size="xs">|</Text>
-                        <Text size="xs">
-                          {location}
-                        </Text>
+                        <Text size="xs">{location}</Text>
                       </HStack>
                     </VStack>
                   </HStack>
@@ -53,6 +67,13 @@ export default function Home() {
               )}
             </VStack>
           </VStack>
+          <HStack justifyContent="start" w="100%" spacing=".5em">
+            {links.map(({ name, url }) => (
+              <Link isExternal={true} fontSize="3xl" key={name + url} href={url}>
+                {name}
+              </Link>
+            ))}
+          </HStack>
         </VStack>
       </VStack>
     </PageWrapper>

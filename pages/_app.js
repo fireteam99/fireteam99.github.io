@@ -6,6 +6,8 @@ import '@fontsource/roboto/700.css';
 
 import './styles.css';
 
+const light = '#DFDFDF';
+
 const theme = extendTheme({
   fonts: {
     heading: 'Rajdhani',
@@ -14,25 +16,30 @@ const theme = extendTheme({
   colors: {
     useSystemColorMode: true,
     dark: '#1E2127',
-    light: '#DFDFDF',
+    light,
   },
   components: {
     Text: {
       baseStyle: {
-        color: '#DFDFDF',
+        color: light,
         fontWeight: '400',
       },
     },
     Heading: {
       baseStyle: {
-        color: '#DFDFDF',
+        color: light,
         fontWeight: '600',
       },
       variants: {
         roboto: {
           fontWeight: '700',
-          fontFamily: 'Roboto'
-        }
+          fontFamily: 'Roboto',
+        },
+      },
+    },
+    Link: {
+      baseStyle: {
+        color: light,
       },
     },
   },

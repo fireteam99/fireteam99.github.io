@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react';
+
+import { useEffect } from 'react';
+import { css, jsx } from '@emotion/react'
+
 import Link from 'next/Link';
-import { Stack, Flex, HStack, VStack, Text, Heading } from '@chakra-ui/react';
+import { Stack, Flex, HStack, Text, Heading } from '@chakra-ui/react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
@@ -61,7 +64,7 @@ export default function PageWrapper(props) {
         flexDirection="column"
       >
         {navLinks.map(({ href, name }) => (
-          <diiv key={name}>
+          <div key={name} css={css`cursor: pointer;`}>
             <motion.div
               whileHover={{
                 x: 65,
@@ -75,7 +78,7 @@ export default function PageWrapper(props) {
                 <Heading size="4xl">{name}</Heading>
               </Link>
             </motion.div>
-          </diiv>
+          </div>
         ))}
       </Flex>
       <Flex flexFlow="column" bg="dark" w="100%">
