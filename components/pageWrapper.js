@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/Link';
-import { Box, Flex, HStack, VStack, Text, Heading } from '@chakra-ui/react';
+import { Stack, Flex, HStack, VStack, Text, Heading } from '@chakra-ui/react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 import useMousePosition from '../hooks/useMouseMove';
+import Logo from './Logo';
 
 const navLinks = [
+  { href: '/', name: 'Home' },
   { href: '/projects', name: 'Projects' },
-  { href: '/about', name: 'About' },
   { href: '/contact', name: 'Contact' },
   { href: '/resume', name: 'Resume' },
 ];
@@ -50,13 +51,13 @@ function Cursor() {
 
 export default function PageWrapper(props) {
   return (
-    <Flex minH="100vh" w="100%" bg="green">
+    <Flex minH="100vh" w="100%">
       <Cursor />
       <Flex
         as="nav"
         position="fixed"
-        bottom=".5em"
-        left="1em"
+        bottom="2em"
+        left="2em"
         flexDirection="column"
       >
         {navLinks.map(({ href, name }) => (
@@ -79,19 +80,22 @@ export default function PageWrapper(props) {
       </Flex>
       <Flex flexFlow="column" bg="dark" w="100%">
         <HStack justifyContent="space-between" alignItems="start" m="3em">
-          <Flex alignItems="flex-start" flexDirection="column">
+          <Stack alignItems="flex-start" flexDirection="column">
             <Heading variant="roboto">Ray Sy</Heading>
-            <Text>Software Engineer @ Amex</Text>
-          </Flex>
-          <HStack>
-            <Text>raysydev@gmail.com</Text>
-            <FaExternalLinkAlt color="var(--chakra-colors-light)" />
-          </HStack>
+            <Text>Software Engineer at Medallion</Text>
+          </Stack>
+          <Stack alignItems="flex-end" flexDirection="column">
+            <Logo />
+            <HStack>
+              <Text>raysydev@gmail.com</Text>
+              <FaExternalLinkAlt color="var(--chakra-colors-light)" />
+            </HStack>
+          </Stack>
         </HStack>
         <Flex
-          justifyContent="flex-end"
           overflowY="auto"
           height="100%"
+          marginLeft="20em"
           {...props}
         />
       </Flex>
