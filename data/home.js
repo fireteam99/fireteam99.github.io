@@ -1,7 +1,7 @@
 export const intro = {
   title: 'Hey there 👋',
   description:
-    'Welcome to the place where I post my recent projects and random musings. I graduated Rutgers University with a degree in Computer Science and am currently a software engineer at Medallion. Thanks for stopping by!',
+    'Welcome to the place where I post my recent projects and random musings. I graduated Rutgers University with a degree in Computer Science and am currently a full stack developer at Medallion. Thanks for stopping by!',
 };
 
 export const timeline = [
@@ -41,4 +41,5 @@ export const timeline = [
 export const links = [
   { name: 'Github', url: 'https://github.com/fireteam99' },
   { name: 'Blog', url: 'https://dev.to/fireteam99' },
+  { name: 'LinkedIn', url: "https://www.linkedin.com/in/ray-sy/" }
 ];

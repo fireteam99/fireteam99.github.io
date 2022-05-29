@@ -1,11 +1,16 @@
-
 import { useEffect } from 'react';
-import { css, jsx } from '@emotion/react'
+import { css, jsx } from '@emotion/react';
 
 import Link from 'next/Link';
 import { Stack, Flex, HStack, Text, Heading } from '@chakra-ui/react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  AnimatePresence,
+} from 'framer-motion';
 
 import useMousePosition from '../hooks/useMouseMove';
 import Logo from './Logo';
@@ -40,15 +45,21 @@ function Cursor() {
   }, [clientX, clientY]);
 
   return (
-    <motion.div
-      className="cursor"
-      style={{
-        translateX: cursorXSpring,
-        translateY: cursorYSpring,
-        scaleX,
-        scaleY,
-      }}
-    />
+    <AnimatePresence>
+      <motion.div
+        className="cursor"
+        style={{
+          translateX: cursorXSpring,
+          translateY: cursorYSpring,
+          scaleX,
+          scaleY,
+        }}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0 }}
+        transition={{ delay: 0.5 }}
+      />
+    </AnimatePresence>
   );
 }
 
@@ -64,7 +75,12 @@ export default function PageWrapper(props) {
         flexDirection="column"
       >
         {navLinks.map(({ href, name }) => (
-          <div key={name} css={css`cursor: pointer;`}>
+          <div
+            key={name}
+            css={css`
+              cursor: pointer;
+            `}
+          >
             <motion.div
               whileHover={{
                 x: 65,
@@ -95,12 +111,7 @@ export default function PageWrapper(props) {
             </HStack>
           </Stack>
         </HStack>
-        <Flex
-          overflowY="auto"
-          height="100%"
-          marginLeft="20em"
-          {...props}
-        />
+        <Flex overflowY="auto" height="100%" marginLeft="22em" {...props} />
       </Flex>
     </Flex>
   );
