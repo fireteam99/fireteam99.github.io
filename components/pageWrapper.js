@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { css, jsx } from '@emotion/react';
 
 import Link from 'next/Link';
-import { Stack, Flex, HStack, Text, Heading } from '@chakra-ui/react';
+import { Stack, Flex, HStack, Text, Heading, Link as ChakraLink } from '@chakra-ui/react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import {
   motion,
@@ -11,6 +11,7 @@ import {
   useTransform,
   AnimatePresence,
 } from 'framer-motion';
+import { primaryInput } from 'detect-it';
 
 import useMousePosition from '../hooks/useMouseMove';
 import Logo from './Logo';
@@ -58,6 +59,7 @@ function Cursor() {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ delay: 0.5 }}
+        onClick={() => console.log('clicked')}
       />
     </AnimatePresence>
   );
@@ -66,7 +68,7 @@ function Cursor() {
 export default function PageWrapper(props) {
   return (
     <Flex minH="100vh" w="100%">
-      <Cursor />
+      {primaryInput !== 'touch' && <Cursor />}
       <Flex
         as="nav"
         position="fixed"
@@ -101,7 +103,7 @@ export default function PageWrapper(props) {
         <HStack justifyContent="space-between" alignItems="start" m="3em">
           <Stack alignItems="flex-start" flexDirection="column">
             <Heading variant="roboto">Ray Sy</Heading>
-            <Text>Software Engineer at Medallion</Text>
+            <Text>Software Engineer at <ChakraLink href="https://medallion.co" target="_blank">Medallion</ChakraLink></Text>
           </Stack>
           <Stack alignItems="flex-end" flexDirection="column">
             <Logo />

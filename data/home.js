@@ -1,4 +1,4 @@
-export const intro = {
+export const heading = {
   title: 'Hey there 👋',
   description:
     'Welcome to the place where I post my recent projects and random musings. I graduated Rutgers University with a degree in Computer Science and am currently a full stack developer at Medallion. Thanks for stopping by!',

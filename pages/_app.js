@@ -39,7 +39,7 @@ const theme = extendTheme({
     },
     Link: {
       baseStyle: {
-        color: light,
+        color: "teal.400",
       },
     },
   },

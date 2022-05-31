@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import PageWrapper from '../components/PageWrapper';
-import { intro, timeline, links } from '../data/home';
+import { heading, timeline, links } from '../data/home';
 
 export default function Home() {
   return (
@@ -18,8 +18,8 @@ export default function Home() {
       <VStack mt="2em" w="100%">
         <VStack maxW="60em" spacing="2em">
           <VStack alignItems="start" mr="5em">
-            <Heading size="3xl">{intro.title}</Heading>
-            <Text fontSize="mx">{intro.description}</Text>
+            <Heading size="3xl">{heading.title}</Heading>
+            <Text fontSize="mx">{heading.description}</Text>
           </VStack>
           <VStack alignItems="start" w="100%">
             <VStack alignItems="start" spacing="0em">
@@ -39,9 +39,9 @@ export default function Home() {
                       marginTop={i == 0 ? "auto" :"initial"}
                     />
                     <Divider width="1em" />
-                    <HStack padding=".6em 0">
-                      <Flex padding=".4em" bg="gray.100" borderRadius="10%">
-                        <Box height="3em" width="3em" position="relative">
+                    <HStack padding=".6em 0" spacing="1em">
+                      <Flex bg="light" borderRadius="10%">
+                        <Box height="3em" width="3em" position="relative" borderRadius="10%" overflow="hidden">
                           {logo && (
                             <Image
                               src={logo}
@@ -53,12 +53,12 @@ export default function Home() {
                         </Box>
                       </Flex>
                       <VStack alignItems="start" spacing=".1em">
-                        <HStack spacing=".3em">
+                        <HStack spacing=".2em">
                           <Heading size="md">{organization}</Heading>
                           <Heading size="md">|</Heading>
                           <Text size="xs">{title}</Text>
                         </HStack>
-                        <HStack>
+                        <HStack spacing=".3em">
                           <Text size="xs">
                             {duration
                               ? duration
