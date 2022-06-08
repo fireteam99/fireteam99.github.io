@@ -1,5 +1,5 @@
 export const heading = {
-  title: "What I'm working on 🧑‍💻",
+  title: "Projects",
 };
 
 export const projects = [

@@ -39,9 +39,36 @@ const theme = extendTheme({
     },
     Link: {
       baseStyle: {
-        color: "teal.400",
+        color: "blue.400",
+        _hover: {
+          color: "blue.200"
+        }
       },
+      
     },
+    Input: {
+      parts: ['field'],
+      baseStyle: {
+        color: light,
+        field: {
+          color: light
+        }
+      }
+    },
+    FormLabel: {
+      baseStyle: {
+        color: light
+      }
+    },
+    Textarea: {
+      parts: ['field'],
+      baseStyle: {
+        color: light,
+        field: {
+          color: light
+        }
+      }
+    }
   },
 });
 

@@ -16,9 +16,9 @@ import { heading, projects } from '../data/projects';
 export default function Projects() {
   return (
     <PageWrapper>
-      <VStack mt="2em" w="100%">
+      <VStack mt="2em" w="100%" ml="5em">
         <VStack w="95%" maxW="80em" spacing="6em" alignItems="flex-start">
-          <VStack alignItems="start" mr="5em">
+          <VStack alignItems="start">
             <Heading size="3xl">{heading.title}</Heading>
             {heading.description && (
               <Text fontSize="mx">{heading.description}</Text>
