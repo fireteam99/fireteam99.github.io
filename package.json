@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.6.0",
     "@fontsource/rajdhani": "^4.5.0",
     "@fontsource/roboto": "^4.5.1",
+    "@sendgrid/mail": "^7.7.0",
     "detect-it": "^4.0.1",
     "framer-motion": "^5.6.0",
     "next": "12.0.8",
