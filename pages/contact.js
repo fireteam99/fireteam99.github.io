@@ -12,29 +12,40 @@ import {
   Icon,
   Tooltip,
   Button,
-  Alert,
-  AlertTitle,
-  AlertDescription,
-  AlertIcon,
-  UnorderedList,
-  ListItem,
+  Text,
+  useToast,
 } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { socials } from '../data/contact';
+import axios from 'axios';
+
+const FieldError = ({ error }) =>
+  error ? <Text color="red.500">{error.message}</Text> : null;
 
 export default function Contact() {
+  const toast = useToast();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-    setError,
   } = useForm();
-  console.log(errors.message);
 
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      await axios.post('/api/message', data);
+      toast({ title: 'Message sent!', status: 'success', isClosable: true });
+      reset();
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: 'Oops, something went wrong',
+        description: `Failed with an error of: ${err.code}, ${err.message}`,
+        status: 'error',
+        isClosable: true,
+      });
+    }
   };
 
   return (
@@ -50,57 +61,49 @@ export default function Contact() {
             onSubmit={handleSubmit(onSubmit)}
           >
             <FormControl>
-             {Object.keys(errors).length > 0 && <Alert status="error">
-                <AlertIcon />
-                <Box>
-                <AlertTitle>
-                  Error
-                </AlertTitle>
-                <AlertDescription>
-                  <UnorderedList>
-                    {Object.keys(errors).map((key) => (
-                      <ListItem key={key}>{errors[key].message}</ListItem>
-                    ))}
-                  </UnorderedList>
-                </AlertDescription>
-
-                </Box>
-              </Alert>}
               <VStack alignItems="start">
                 <Box w="100%">
-                  <FormLabel htmlFor="name">Name</FormLabel>
+                  <FormLabel htmlFor="name">Name *</FormLabel>
                   <Input
                     id="name"
                     color="white"
+                    isInvalid={errors.name}
                     {...register('name', { required: 'Name is required' })}
                   />
+                  <FieldError error={errors.name} />
                 </Box>
                 <Box w="100%">
-                  <FormLabel htmlFor="email">Email</FormLabel>
+                  <FormLabel htmlFor="email">Email *</FormLabel>
                   <Input
                     id="email"
                     type="email"
+                    isInvalid={errors.email}
                     {...register('email', { required: 'Email is required' })}
                   />
+                  <FieldError error={errors.email} />
                 </Box>
                 <Box w="100%">
-                  <FormLabel htmlFor="subject">Subject</FormLabel>
+                  <FormLabel htmlFor="subject">Subject *</FormLabel>
                   <Input
                     id="subject"
                     {...register('subject', {
                       required: 'Subject is required',
                     })}
+                    isInvalid={errors.subject}
                   />
+                  <FieldError error={errors.subject} />
                 </Box>
                 <Box w="100%">
-                  <FormLabel htmlFor="message">Message</FormLabel>
+                  <FormLabel htmlFor="message">Message *</FormLabel>
                   <Textarea
                     id="message"
                     height="7em"
                     {...register('message', {
                       required: 'Message is required',
                     })}
+                    isInvalid={errors.message}
                   />
+                  <FieldError error={errors.message} />
                 </Box>
                 <Button type="submit" style={{ marginTop: '1em' }}>
                   Submit
@@ -111,9 +114,20 @@ export default function Contact() {
           <HStack>
             {socials.map(({ name, url, icon }) => (
               <Tooltip label={name} fontSize="md" key={name + url}>
-                <a href={url}>
-                  <Icon as={icon} color="light" boxSize="2em" />
-                </a>
+                <motion.div
+                  whileHover={{
+                    scale: 1.2,
+                    transition: { duration: 0.1, bounce: 1 },
+                  }}
+                  whileTap={{
+                    scale: 0.9,
+                    transition: { duration: 0.1, bounce: 1 },
+                  }}
+                >
+                  <a href={url}>
+                    <Icon as={icon} color="light" boxSize="2em" />
+                  </a>
+                </motion.div>
               </Tooltip>
             ))}
           </HStack>

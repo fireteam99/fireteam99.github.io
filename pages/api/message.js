@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
   const msg = {
     to: process.env.CONTACT_EMAIL, // Change to your recipient
-    from: 'ray@raysy.dev', // Change to your verified sender
+    from: process.env.FROM_EMAIL, // Change to your verified sender
     subject,
     text: `${name}\n${email}\n${message}`,
   };
@@ -16,6 +16,7 @@ export default async function handler(req, res) {
     const response = await sgMail.send(msg);
     res.status(response[0].statusCode).json(response[0].headers);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 }
