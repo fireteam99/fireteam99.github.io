@@ -51,7 +51,7 @@ export default function Contact() {
   return (
     <PageWrapper>
       <VStack w="100%">
-        <VStack w="95%" maxW="80em" alignItems="flex-start" spacing="2em">
+        <VStack w="88%" maxW="80em" alignItems="flex-start" spacing="2em">
           <Heading size="3xl">Contact</Heading>
           <form
             css={css`

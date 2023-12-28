@@ -2,13 +2,11 @@ import {
   VStack,
   Heading,
   HStack,
-  Box,
   Img,
   Text,
   Divider,
   Link,
 } from '@chakra-ui/react';
-import { css } from '@emotion/react';
 import NextLink from 'next/Link';
 import PageWrapper from '../components/PageWrapper';
 import { heading, projects } from '../data/projects';
