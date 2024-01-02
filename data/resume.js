@@ -2,6 +2,22 @@ export const heading = {
   title: 'Resume',
 };
 
+const parseResumeDate = (resumeTitle) => {
+  console.log('resumeTitle', resumeTitle);
+  const regex = /resume\((\d{4}-\d{2}-\d{2})\)/;
+  const match = resumeTitle.match(regex);
+
+  if (match && match[1]) {
+    const [, dateString] = match;
+    const parsedDate = new Date(dateString);
+    console.log('failed to parse date', dateString, parsedDate);
+    if (!isNaN(parsedDate)) {
+      return parsedDate;
+    }
+  }
+  return null;
+};
+
 export const resumes = [
   { pdf: 'resume(2018-03-10).pdf' },
   { pdf: 'resume(2018-04-09).pdf' },
@@ -17,4 +33,11 @@ export const resumes = [
     html: 'resume(2022-01-15).html',
     pdf: 'resume(2022-01-15).pdf',
   },
-].reverse();
+]
+  .map((resume) => ({
+    ...resume,
+    date: parseResumeDate(resume.pdf || resume.html),
+  }))
+  .sort((a, b) => b.date - a.date);
+
+console.log('resume', resumes);
