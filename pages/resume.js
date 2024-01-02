@@ -63,6 +63,7 @@ export default function Resume() {
                 fontSize="xl"
                 href={`resources/${currentResume.html}`}
                 target="_blank"
+                rel="noreferrer"
               >
                 View
               </Link>
@@ -70,6 +71,7 @@ export default function Resume() {
                 fontSize="xl"
                 href={`resources/${currentResume.pdf}`}
                 target="_blank"
+                rel="noreferrer"
               >
                 Download
               </Link>
@@ -122,12 +124,20 @@ export default function Resume() {
                   <AccordionPanel>
                     <HStack>
                       {pdf && (
-                        <Link href={`resources/${pdf}`} target="_blank">
+                        <Link
+                          href={`resources/${pdf}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           PDF
                         </Link>
                       )}
                       {html && (
-                        <Link href={`resources/${html}`} target="_blank">
+                        <Link
+                          href={`resources/${html}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           HTML
                         </Link>
                       )}

@@ -25,7 +25,16 @@ export default function Home() {
             <VStack alignItems="start" spacing="0em">
               {timeline.map(
                 (
-                  { organization, title, start, end, duration, logo, location },
+                  {
+                    organization,
+                    title,
+                    start,
+                    end,
+                    duration,
+                    logo,
+                    location,
+                    url,
+                  },
                   i
                 ) => (
                   <HStack key={organization + title} spacing="0em">
@@ -35,22 +44,32 @@ export default function Home() {
                       height={
                         i == 0 || i == timeline.length - 1 ? '50%' : '100%'
                       }
-                      marginBottom={i == timeline.length - 1 ? "auto" :"initial"}
-                      marginTop={i == 0 ? "auto" :"initial"}
+                      marginBottom={
+                        i == timeline.length - 1 ? 'auto' : 'initial'
+                      }
+                      marginTop={i == 0 ? 'auto' : 'initial'}
                     />
                     <Divider width="1em" />
                     <HStack padding=".6em 0" spacing="1em">
                       <Flex bg="light" borderRadius="10%">
-                        <Box height="3em" width="3em" position="relative" borderRadius="10%" overflow="hidden">
-                          {logo && (
-                            <Image
-                              src={logo}
-                              alt={logo}
-                              layout="fill"
-                              objectFit="contain"
-                            />
-                          )}
-                        </Box>
+                        <a href={url || '#'} target="_blank" rel="noreferrer">
+                          <Box
+                            height="3em"
+                            width="3em"
+                            position="relative"
+                            borderRadius="10%"
+                            overflow="hidden"
+                          >
+                            {logo && (
+                              <Image
+                                src={logo}
+                                alt={logo}
+                                layout="fill"
+                                objectFit="contain"
+                              />
+                            )}
+                          </Box>
+                        </a>
                       </Flex>
                       <VStack alignItems="start" spacing=".1em">
                         <HStack spacing=".2em">

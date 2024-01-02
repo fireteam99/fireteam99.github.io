@@ -1,7 +1,7 @@
 export const heading = {
-  title: 'Hey there 👋',
+  title: 'Hey there! 👋',
   description:
-    'Welcome to the place where I post my recent projects and random musings. I graduated Rutgers University with a degree in Computer Science and am currently a full stack developer at Medallion. Thanks for stopping by!',
+    "I'm a full stack developer based in San Francisco currently working at Medallion. Previously, I worked at American Express and graduated from Rutgers University with a degree in Computer Science. Thanks for stopping by!",
 };
 
 export const timeline = [
@@ -12,6 +12,7 @@ export const timeline = [
     end: null,
     logo: '/images/medallion-logo.jpeg',
     location: 'San Francisco, CA',
+    url: 'https://www.medallion.co/',
   },
   {
     organization: 'American Express',
@@ -20,6 +21,7 @@ export const timeline = [
     end: '2022',
     logo: '/images/amex-logo.png',
     location: 'New York, NY',
+    url: 'https://www.americanexpress.com/',
   },
   {
     organization: 'American Express',
@@ -27,6 +29,7 @@ export const timeline = [
     duration: 'Summer 2020',
     logo: '/images/amex-logo.png',
     location: 'New York, NY',
+    url: 'https://www.americanexpress.com/',
   },
   {
     organization: 'Rutgers University',
@@ -35,11 +38,12 @@ export const timeline = [
     end: '2021',
     logo: '/images/rutgers-logo.png',
     location: 'New Brunswick, NJ',
+    url: 'https://www.rutgers.edu/',
   },
 ];
 
 export const links = [
   { name: 'Github', url: 'https://github.com/fireteam99' },
   { name: 'Blog', url: 'https://dev.to/fireteam99' },
-  { name: 'LinkedIn', url: "https://www.linkedin.com/in/ray-sy/" }
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ray-sy/' },
 ];

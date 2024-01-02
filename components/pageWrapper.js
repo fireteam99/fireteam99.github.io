@@ -2,7 +2,14 @@ import { useEffect } from 'react';
 import { css, jsx } from '@emotion/react';
 
 import Link from 'next/Link';
-import { Stack, Flex, HStack, Text, Heading, Link as ChakraLink } from '@chakra-ui/react';
+import {
+  Stack,
+  Flex,
+  HStack,
+  Text,
+  Heading,
+  Link as ChakraLink,
+} from '@chakra-ui/react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import {
   motion,
@@ -103,7 +110,16 @@ export default function PageWrapper(props) {
         <HStack justifyContent="space-between" alignItems="start" m="3em">
           <Stack alignItems="flex-start" flexDirection="column">
             <Heading variant="roboto">Ray Sy</Heading>
-            <Text>Software Engineer at <ChakraLink href="https://medallion.co" target="_blank">Medallion</ChakraLink></Text>
+            <Text>
+              Software Engineer at{' '}
+              <ChakraLink
+                href="https://medallion.co"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Medallion
+              </ChakraLink>
+            </Text>
           </Stack>
           <Stack alignItems="flex-end" flexDirection="column">
             <Logo />
