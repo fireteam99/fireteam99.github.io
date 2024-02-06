@@ -44,13 +44,13 @@ export default function Projects() {
                 </VStack>
                 <VStack maxW="30em" alignItems="start">
                   <VStack alignItems="start" spacing="0em">
-                    <Heading fontSize="4xl" color="gray.300">{title}</Heading>
+                    <Heading fontSize="4xl" color="gray.300">
+                      {title}
+                    </Heading>
                     <HStack>
                       {links.map(({ name, href }) => (
                         <NextLink href={href} key={name + href} passHref>
-                          <Link fontSize="xl">
-                            {name}
-                          </Link>
+                          <Link fontSize="xl">{name}</Link>
                         </NextLink>
                       ))}
                     </HStack>
