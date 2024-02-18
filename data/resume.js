@@ -3,17 +3,16 @@ export const heading = {
 };
 
 const parseResumeDate = (resumeTitle) => {
-  console.log('resumeTitle', resumeTitle);
   const regex = /resume\((\d{4}-\d{2}-\d{2})\)/;
   const match = resumeTitle.match(regex);
 
   if (match && match[1]) {
     const [, dateString] = match;
     const parsedDate = new Date(dateString);
-    console.log('failed to parse date', dateString, parsedDate);
     if (!isNaN(parsedDate)) {
       return parsedDate;
     }
+    console.error("Couldn't parse date from resume title", resumeTitle);
   }
   return null;
 };
@@ -39,5 +38,3 @@ export const resumes = [
     date: parseResumeDate(resume.pdf || resume.html),
   }))
   .sort((a, b) => b.date - a.date);
-
-console.log('resume', resumes);

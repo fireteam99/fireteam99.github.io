@@ -12,8 +12,17 @@ import useMousePosition from '../../hooks/useMouseMove';
 export default function Cursor() {
   const [isClient, setIsClient] = useState(false);
 
+  const [cursorOnScreen, setCursorOnScreen] = useState(false);
+
   useEffect(() => {
     setIsClient(true);
+
+    document.documentElement.addEventListener('mouseleave', () => {
+      setCursorOnScreen(false);
+    });
+    document.documentElement.addEventListener('mouseenter', () => {
+      setCursorOnScreen(true);
+    });
   }, []);
 
   const { clientX, clientY } = useMousePosition();
@@ -40,21 +49,23 @@ export default function Cursor() {
   return (
     isClient && (
       <AnimatePresence>
-        <motion.div
-          className="cursor"
-          style={{
-            translateX: cursorXSpring,
-            translateY: cursorYSpring,
-            scaleX,
-            scaleY,
-          }}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          transition={{ delay: 0.5 }}
-          onClick={() => console.log('clicked')}
-          zIndex={1000}
-        />
+        {cursorOnScreen && (
+          <motion.div
+            className="cursor"
+            style={{
+              translateX: cursorXSpring,
+              translateY: cursorYSpring,
+              scaleX,
+              scaleY,
+            }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            transition={{ delay: 0.5 }}
+            onClick={() => console.log('clicked')}
+            // zIndex={1000}
+          />
+        )}
       </AnimatePresence>
     )
   );

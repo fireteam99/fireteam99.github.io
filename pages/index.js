@@ -9,6 +9,7 @@ import {
   Divider,
   Stack,
   useMediaQuery,
+  Spacer,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import PageWrapper from '../components/PageWrapper';
@@ -48,7 +49,11 @@ function ExperienceBlock({
           {!isSmallerThan30em && <Heading size="md">|</Heading>}
           <Text fontSize="md">{title}</Text>
         </Stack>
-        <Stack direction={['column', 'row']} spacing={['.1em', '.3em']}>
+        <Stack
+          direction={['column', 'row']}
+          spacing={['.1em', '.3em']}
+          alignItems={['initial', 'center']}
+        >
           <Text fontSize={['xs', 'sm']}>
             {duration ? duration : `${start} - ${end || 'Present'}`}
           </Text>
@@ -105,7 +110,7 @@ export default function Home() {
                       }
                       marginTop={i == 0 ? 'auto' : 'initial'}
                     />
-                    <Divider width="1em" />
+                    <Spacer width="1em" />
                     <ExperienceBlock
                       url={url}
                       logo={logo}

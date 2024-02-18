@@ -29,7 +29,7 @@ export default function Resume() {
   const outerVStackDimensions = useDimensions(outerVStackRef, true);
   const resumeWidth = Math.min(
     outerVStackDimensions?.borderBox?.width - 100,
-    1200
+    1000
   );
 
   const resumeRef = useRef();
@@ -85,6 +85,13 @@ export default function Resume() {
               overflow="hidden"
               minWidth={resumeWidth}
               ref={resumeRef}
+              onClick={() => {
+                const currentWidth =
+                  outerVStackDimensions?.borderBox?.width || 0;
+                if (currentWidth < 715) {
+                  window.open(`resources/${currentResume.html}`, '_blank');
+                }
+              }}
             >
               <Document
                 file={`resources/${currentResume.pdf}`}
@@ -106,6 +113,7 @@ export default function Resume() {
             allowToggle
             allowMultiple
             width={resumeWidth}
+            transition={{ enter: { duration: 1 } }}
           >
             {archivedResumes.map(({ pdf, html, date }, i) => {
               const resumeDate = date
