@@ -1,0 +1,15 @@
+.cursor {
+  height: 32px;
+  width: 32px;
+  background: var(--chakra-colors-light);
+  border-radius: 50%;
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 300;
+  mix-blend-mode: difference;
+}
+
+.react-pdf__Page__annotations {
+  height: 0
+}

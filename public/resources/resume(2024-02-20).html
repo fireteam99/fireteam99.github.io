@@ -134,12 +134,12 @@ a {
 
 .sectionContent li,
 .description {
-  font: font: 10pt/1.4 "Helvetica", "Calibri", "Arial";
+  font: 10pt/1.4 "Helvetica", "Calibri", "Arial";
 }
 
 .sectionContent .date,
 .location,
-.score, .position {
+.score, .position, .roles {
   font: 11pt/1.4 "Garamond", "Cambria", "Times New Roman", "Times";
 }
 
@@ -157,6 +157,7 @@ a {
 }
 
 .summary {
+  font-style: italic;
   margin-top: 6px;
 }
 
@@ -169,6 +170,7 @@ a {
 }
 
 .description {
+  font-style: italic;
   text-align: left;
 }
 
@@ -304,10 +306,10 @@ blockquote.reference {
   .sectionLine {
     margin: 7px 0;
   }
-  .sectionContent li, .description {
+  .sectionContent li {
     font-size: 8pt;
   }
-  .sectionContent .date, .location, .score, .position {
+  .sectionContent .date, .location, .score, .position, .roles {
     font-size: 10pt;
   }
   .sectionContent .title {
@@ -319,6 +321,12 @@ blockquote.reference {
   }
   .sectionContent .separator {
     height: 7px;
+  }
+  .sectionContent .description {
+    font-size: 10pt;
+  }
+  .summary {
+    font-size: 8.5pt;
   }
 }
 
@@ -336,12 +344,10 @@ blockquote.reference {
 		<div id='basicsBlock' class='smallFont'>
 			<div class='contactBlock'>
 				<span class='email'><a href="mailto:raysydev@gmail.com">raysydev@gmail.com</a></span>
-				<span class='divider'>|</span>
-				<span class='phone'>+1 (732) 325-8389</span>
-				<br />
-				<span class='url'>
-					<a href='https://raysy.dev'>https://raysy.dev</a>
-				</span>
+					<span class='divider'>|</span>
+					<span class='url'>
+						<a href='https://raysy.dev'>https://raysy.dev</a>
+					</span>
 			</div>
 			<div id='profilesBlock'>
 				<span class='url'>
@@ -356,44 +362,96 @@ blockquote.reference {
 		</div>
 		
 		<hr class='sectionLine' />
-		<div id='skills' class="sectionBlock">
+		<div id='workBlock' class="sectionBlock">
 			<div class='sectionName'>
-				<span>Skills</span>
+				<span>Experience</span>
 			</div>
 			<div class='sectionContent'>
-				<div class='skillBlock'>
-					<span class='title'>Languages:</span>
-					<span class="smallFont">Javascript</span>, 
-					<span class="smallFont">Python</span>, 
-					<span class="smallFont">Java</span>, 
-					<span class="smallFont">C</span>, 
-					<span class="smallFont">Dart</span>, 
-					<span class="smallFont">SQL</span>, 
-					<span class="smallFont">Shell</span>, 
-					<span class="smallFont">HTML</span>, 
-					<span class="smallFont">CSS</span>
+				<div class="jobBlock">
+					<div class='blockHeader'>
+						<spam>
+							<span class='title'>Medallion</span>
+							 | <span class="position">Software Engineer</span>
+						</spam>
+						<span class='date'>
+							Jun 2021 - Present
+						</span>
+					</div>
+					<div class="blockSubheader"><a href='https://medallion.co'>https://medallion.co</a><span class="location">San Francisco, CA</span>
+					</div>
+					<div class="summary">
+						<p>Developed performant, automation-centric product initiatives as a full-stack engineer utilizing Django, React, and GraphQL at a fast moving health-tech startup.</p>
+					</div>
+					<ul class='highlights'>
+						<li>Pioneered GraphQL at Medallion by handling the initial integration, migrating inefficient REST endpoints, and cultivating an active community - improving app performance, code architecture, and development velocity.</li>
+						<li>Built a robust email notification system for our high-throughput provider import pipeline using Celery and Customer.io - decreasing turn around times by 30%.</li>
+						<li>Integrated a battle-tested verifications service using Celerybeat and Pusher into the credentialing platform, ensuring real-time provider compliance while streamlining operational efficiency.</li>
+					</ul>
+					<div class='separator'></div>
 				</div>
-				<div class='skillBlock'>
-					<span class='title'>Frameworks/Tools:</span>
-					<span class="smallFont">React</span>, 
-					<span class="smallFont">Flutter</span>, 
-					<span class="smallFont">Express</span>, 
-					<span class="smallFont">Flask</span>, 
-					<span class="smallFont">Sklearn</span>, 
-					<span class="smallFont">Sketch</span>, 
-					<span class="smallFont">Photoshop</span>, 
-					<span class="smallFont">Illustrator</span>, 
-					<span class="smallFont">Invision</span>
+				<div class="jobBlock">
+					<div class='blockHeader'>
+						<spam>
+							<span class='title'>American Express</span>
+							 | <span class="position">Software Engineer</span>
+						</spam>
+						<span class='date'>
+							Jan 2021 - May 2022
+						</span>
+					</div>
+					<div class="blockSubheader"><a href='https://americanexpress.com'>https://americanexpress.com</a><span class="location">New York, NY</span>
+					</div>
+					<div class="summary">
+						<p>Developed site/infrastructure related features and enhancements as a full stack engineer on Amex&#x27;s GCS Commercial team using React, Redux, and GraphQL - making a combined impact of several hundred million dollars annually.</p>
+					</div>
+					<ul class='highlights'>
+						<li>Executed multiple successful A/B tests, notably creating an enhanced mobile horizontal carousel that projected an annual incremental revenue boost of $150M.</li>
+						<li>Spearheaded site-wide accessibility enhancements by cataloging outstanding violations while working closely with PMs and developers to reduce the number of issues by over 95%.</li>
+						<li>Created and popularized an internal Chrome extension to automate syncing authentication cookies between local and test environments - improving developer experience and cutting workflow times by 90%.</li>
+					</ul>
+					<div class='separator'></div>
 				</div>
-				<div class='skillBlock'>
-					<span class='title'>Technologies:</span>
-					<span class="smallFont">Firebase</span>, 
-					<span class="smallFont">MongoDB</span>, 
-					<span class="smallFont">PostgreSQL</span>, 
-					<span class="smallFont">Heroku</span>, 
-					<span class="smallFont">Docker</span>, 
-					<span class="smallFont">Redis</span>, 
-					<span class="smallFont">Git</span>
+				<div class="jobBlock">
+					<div class='blockHeader'>
+						<spam>
+							<span class='title'>American Express</span>
+							 | <span class="position">Software Engineering Intern</span>
+						</spam>
+						<span class='date'>
+							Jun 2020 - Aug 2020
+						</span>
+					</div>
+					<div class="blockSubheader"><a href='https://americanexpress.com'>https://americanexpress.com</a><span class="location">New York, NY</span>
+					</div>
+					<div class="summary">
+						<p>Created Experience Builder - a tool that empowers non-engineers to generate production ready UI variations for consumer facing sites.</p>
+					</div>
+					<ul class='highlights'>
+						<li>Designed a “composer” UI using React.js featuring an interactive canvas, sortable layer tree, widget palette, and export panel, making it intuitive to create components compliant with standardized design guidelines.</li>
+						<li>Engineered a persistence and versioning system that allowed multiple users to collaborate concurrently on a composition using PostgreSQL and Express.js.</li>
+					</ul>
+					<div class='separator'></div>
+				</div>
+				<div class="jobBlock">
+					<div class='blockHeader'>
+						<spam>
+							<span class='title'>Heat.wav</span>
+							 | <span class="position">Technical Co-Founder</span>
+						</spam>
+						<span class='date'>
+							Aug 2018 - Sep 2022
+						</span>
+					</div>
+					<div class="blockSubheader"><a href='https://heatwav.co'>https://heatwav.co</a><span class="location">New York, NY</span>
+					</div>
+					<div class="summary">
+						<p>Led technical development of a location-based music &amp; artist discovery platform that placed in the quarter finals at NYU InnoVention, and semi finals at RU Innovators.</p>
+					</div>
+					<ul class='highlights'>
+						<li>Designed and architected Heat.wav&#x27;s tech stack to fit current and anticipated product needs while setting technical standards to ensure a maintainable codebase.</li>
+						<li>Collaborated closely with our designer, product expert, and co-developers to effectively translate and delegate feature requests and wireframes into detailed objectives using Asana, Invision, and Slack.</li>
+					</ul>
+					
 				</div>
 			</div>
 		</div>
@@ -421,96 +479,44 @@ blockquote.reference {
 			</div>
 		</div>
 		<hr class='sectionLine' />
-		<div id='workBlock' class="sectionBlock">
+		<div id='skills' class="sectionBlock">
 			<div class='sectionName'>
-				<span>Experience</span>
+				<span>Skills</span>
 			</div>
 			<div class='sectionContent'>
-				<div class="jobBlock">
-					<div class='blockHeader'>
-						<spam>
-							<span class='title'>American Express</span>
-							 | <span class="position">Software Engineer</span>
-						</spam>
-						<span class='date'>
-							Jan 2021 - Present
-						</span>
-					</div>
-					<div class="blockSubheader"><a href='https://americanexpress.com'>https://americanexpress.com</a><span class="location">New York, NY</span>
-					</div>
-					<ul class='highlights'>
-						<li>Contributed to site/infrastructure related features and enhancements as a full stack engineer on AMEX&#x27;s GCS Commercial team using React, Redux, and GraphQL - making a combined impact of several hundred million dollars annually.</li>
-						<li>Conducted several successful A/B tests, including: building out a new mobile horizontal carousel which had an estimated annual incremental BBA of $150M.</li>
-						<li>Spearheaded WCAG (accessibility) compliance efforts on our site by organizing a list of outstanding violations while working closely with PMs and developers to reduce the number of issues by more than 83%.</li>
-						<li>Created and promoted an internal Chrome extension to automate syncing authentication cookies between local and test environments - improving developer experience and saving hours of wasted time.</li>
-					</ul>
-					<div class='separator'></div>
+				<div class='skillBlock'>
+					<span class='title'>Languages:</span>
+					<span class="smallFont">Javascript</span>, 
+					<span class="smallFont">Python</span>, 
+					<span class="smallFont">SQL</span>, 
+					<span class="smallFont">Java</span>, 
+					<span class="smallFont">C</span>, 
+					<span class="smallFont">Dart</span>, 
+					<span class="smallFont">Shell</span>, 
+					<span class="smallFont">HTML</span>, 
+					<span class="smallFont">CSS</span>
 				</div>
-				<div class="jobBlock">
-					<div class='blockHeader'>
-						<spam>
-							<span class='title'>American Express</span>
-							 | <span class="position">Software Engineering Intern</span>
-						</spam>
-						<span class='date'>
-							Jun 2020 - Aug 2020
-						</span>
-					</div>
-					<div class="blockSubheader"><a href='https://americanexpress.com'>https://americanexpress.com</a><span class="location">New York, NY</span>
-					</div>
-					<ul class='highlights'>
-						<li>Created Experience Builder - a tool that empowers non-engineers to generate production ready UI variations for consumer facing sites.</li>
-						<li>Designed a &quot;composer&quot; interface using React.js featuring an interactive canvas, sortable layer tree, and widget palette, making it easy to create components compliant with standardized design guidelines.</li>
-						<li>Initiated and implemented a practical code generation feature which produced import information and JSX for any visual composition.</li>
-						<li>Engineered a persistence and versioning system that allowed multiple users to collaborate concurrently on a composition using PostgreSQL and Express.js.</li>
-					</ul>
-					<div class='separator'></div>
+				<div class='skillBlock'>
+					<span class='title'>Frameworks/Tools:</span>
+					<span class="smallFont">React</span>, 
+					<span class="smallFont">Django</span>, 
+					<span class="smallFont">Express</span>, 
+					<span class="smallFont">Next.js</span>, 
+					<span class="smallFont">Flask</span>, 
+					<span class="smallFont">Flutter</span>, 
+					<span class="smallFont">Sketch</span>, 
+					<span class="smallFont">Figma</span>
 				</div>
-				<div class="jobBlock">
-					<div class='blockHeader'>
-						<spam>
-							<span class='title'>Heat.wav</span>
-							 | <span class="position">Technical Co-Founder</span>
-						</spam>
-						<span class='date'>
-							Aug 2018 - Present
-						</span>
-					</div>
-					<div class="blockSubheader"><a href='https://heatwav.co'>https://heatwav.co</a><span class="location">New York, NY</span>
-					</div>
-					<ul class='highlights'>
-						<li>Led technical development of a location-based music &amp; artist discovery platform undergoing beta-testing that placed in the quarter finals at NYU Innovention, and semi finals at RU Innovators.</li>
-						<li>Designed and architected Heat.wav&#x27;s tech stack to fit current and anticipated product needs while setting technical standards to ensure a maintainable codebase.</li>
-						<li>Collaborated closely with our designer, product manager, and co-developers to effectively translate and delegate feature requests and wireframes into detailed objectives using Asana, Slack and Storybook.</li>
-					</ul>
-					
-				</div>
-			</div>
-		</div>
-		<hr class='sectionLine' />
-		<div id='projectsBlock' class="sectionBlock">
-			<div class='sectionName'>
-				<span>Projects</span>
-			</div>
-			<div class='sectionContent'>
-				<div class="projectBlock">
-					<div class='blockHeader'>
-						<span>
-							<span class='title'>
-								Project C.R.A.L.
-							</span>
-							
-							 | <span class="roles">Author</span>
-						</span>
-					</div>
-					<div><a href='https://github.com/fireteam99/cral-cli'>https://github.com/fireteam99/cral-cli</a></div>
-					<div class="description">
-						<p>Created an open source CLI published on NPM that automates course registration for Rutgers University using Node.js &amp; Puppeteer.</p>
-					</div>
-					<ul class='highlights'>
-						<li>Utilized Commander.js and Inquirer.js to build an attractive, user-friendly UI featuring live notifications with node-notifier.</li>
-					</ul>
-					
+				<div class='skillBlock'>
+					<span class='title'>Technologies:</span>
+					<span class="smallFont">GraphQL</span>, 
+					<span class="smallFont">PostgreSQL</span>, 
+					<span class="smallFont">MongoDB</span>, 
+					<span class="smallFont">Docker</span>, 
+					<span class="smallFont">AWS</span>, 
+					<span class="smallFont">Heroku</span>, 
+					<span class="smallFont">Firebase</span>, 
+					<span class="smallFont">Redis</span>
 				</div>
 			</div>
 		</div>
