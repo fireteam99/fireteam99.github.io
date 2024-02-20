@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { css, jsx } from '@emotion/react';
 import { Box, IconButton, useDisclosure, SlideFade } from '@chakra-ui/react';
 import { Flex, Heading } from '@chakra-ui/react';
@@ -39,7 +40,7 @@ function NavLinks({ variant = 'large' }) {
               transition: { duration: 0.1, bounce: 1 },
             }}
           >
-            <Link href={href}>
+            <Link href={href} passHref>
               <Heading size={isLarge ? '4xl' : '3xl'}>{name}</Heading>
             </Link>
           </motion.div>

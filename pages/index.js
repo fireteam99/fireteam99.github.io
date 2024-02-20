@@ -6,7 +6,6 @@ import {
   VStack,
   Flex,
   Link,
-  Divider,
   Stack,
   useMediaQuery,
   Spacer,
