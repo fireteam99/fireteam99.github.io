@@ -22,7 +22,6 @@ import { useEffect, useRef, useState } from 'react';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 export default function Resume() {
-  // const resumeScale = useBreakpointValue({ base: 2, md: 2, sm: 1 });
   const [currentResume, ...archivedResumes] = resumes;
 
   const outerVStackRef = useRef();
@@ -47,37 +46,50 @@ export default function Resume() {
 
   return (
     <PageWrapper>
-      <VStack mt="2em" w="100%" ml="5em" ref={outerVStackRef} spacing="2em">
-        <VStack w="95%" maxW="80em" spacing="1em" alignItems="flex-start">
-          <Heading size="3xl">{heading.title}</Heading>
-          <VStack alignItems="start" spacing="0">
-            <Heading size="xl">
-              Current
-              {currentResume.date &&
-                ` (${DateTime.fromJSDate(currentResume.date).toLocaleString(
-                  DateTime.DATE_MED
-                )})`}
-            </Heading>
-            <HStack>
-              <Link
-                fontSize="xl"
-                href={`resources/${currentResume.html}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                View
-              </Link>
-              <Link
-                fontSize="xl"
-                href={`resources/${currentResume.pdf}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Download
-              </Link>
-            </HStack>
+      <VStack
+        mt="2em"
+        w="100%"
+        ml={{ base: 0, md: '5em' }}
+        ref={outerVStackRef}
+        spacing="2em"
+      >
+        <VStack
+          w="95%"
+          maxW="80em"
+          spacing="1em"
+          alignItems={{ base: 'center', sm: 'flex-start' }}
+        >
+          <VStack alignItems="start">
+            <Heading size="3xl">{heading.title}</Heading>
+            <VStack alignItems="start" spacing="0">
+              <Heading size="xl">
+                Current
+                {currentResume.date &&
+                  ` (${DateTime.fromJSDate(currentResume.date).toLocaleString(
+                    DateTime.DATE_MED
+                  )})`}
+              </Heading>
+              <HStack>
+                <Link
+                  fontSize="xl"
+                  href={`resources/${currentResume.html}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View
+                </Link>
+                <Link
+                  fontSize="xl"
+                  href={`resources/${currentResume.pdf}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Download
+                </Link>
+              </HStack>
+            </VStack>
           </VStack>
-          <HStack sx={{ marginTop: '2em !important' }}>
+          <HStack sx={{ marginTop: '2em !important' }} justifyContent="center">
             <Box
               bg="white"
               borderRadius=".5em"
@@ -112,7 +124,7 @@ export default function Resume() {
             defaultIndex={[0]}
             allowToggle
             allowMultiple
-            width={resumeWidth}
+            width={{ base: '100%', md: resumeWidth }}
             transition={{ enter: { duration: 1 } }}
           >
             {archivedResumes.map(({ pdf, html, date }, i) => {

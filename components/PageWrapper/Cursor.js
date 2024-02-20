@@ -8,22 +8,10 @@ import {
 } from 'framer-motion';
 
 import useMousePosition from '../../hooks/useMouseMove';
+import useIsClient from '../../hooks/useIsClient';
 
 export default function Cursor() {
-  const [isClient, setIsClient] = useState(false);
-
-  const [cursorOnScreen, setCursorOnScreen] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-
-    document.documentElement.addEventListener('mouseleave', () => {
-      setCursorOnScreen(false);
-    });
-    document.documentElement.addEventListener('mouseenter', () => {
-      setCursorOnScreen(true);
-    });
-  }, []);
+  const isClient = useIsClient();
 
   const { clientX, clientY } = useMousePosition();
 
@@ -39,12 +27,52 @@ export default function Cursor() {
 
   const scaleX = useTransform(velocityY, [0, 1000], [1, 0.6]);
   const scaleY = useTransform(velocityX, [0, 1000], [1, 0.6]);
+
   useEffect(() => {
     cursorX.set(clientX - 16);
     cursorY.set(clientY - 16);
     velocityX.set(cursorX.getVelocity());
     velocityY.set(cursorY.getVelocity());
   }, [clientX, clientY, cursorX, cursorY, velocityX, velocityY]);
+
+  const [cursorOnScreen, setCursorOnScreen] = useState(false);
+  const clickScale = useSpring(1, springConfig);
+
+  useEffect(() => {
+    const handleMouseDown = () => {
+      clickScale.set(0.8);
+    };
+
+    const handleMouseUp = () => {
+      clickScale.set(1);
+    };
+
+    const handleMouseLeave = () => {
+      setCursorOnScreen(false);
+    };
+
+    const handleMouseEnter = () => {
+      setCursorOnScreen(true);
+    };
+
+    document.body.addEventListener('mousedown', handleMouseDown);
+    document.body.addEventListener('mouseup', handleMouseUp);
+    document.documentElement.addEventListener('mouseleave', handleMouseLeave);
+    document.documentElement.addEventListener('mouseenter', handleMouseEnter);
+
+    return () => {
+      document.body.removeEventListener('mousedown', handleMouseDown);
+      document.body.removeEventListener('mouseup', handleMouseUp);
+      document.documentElement.removeEventListener(
+        'mouseleave',
+        handleMouseLeave
+      );
+      document.documentElement.removeEventListener(
+        'mouseenter',
+        handleMouseEnter
+      );
+    };
+  }, [clickScale, cursorX, cursorY]);
 
   return (
     isClient && (
@@ -57,13 +85,11 @@ export default function Cursor() {
               translateY: cursorYSpring,
               scaleX,
               scaleY,
+              scale: clickScale,
             }}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0 }}
-            transition={{ delay: 0.5 }}
-            onClick={() => console.log('clicked')}
-            // zIndex={1000}
           />
         )}
       </AnimatePresence>

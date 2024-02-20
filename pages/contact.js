@@ -19,6 +19,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { socials } from '../data/contact';
 import axios from 'axios';
+import { useState } from 'react';
 
 const FieldError = ({ error }) =>
   error ? <Text color="red.500">{error.message}</Text> : null;
@@ -32,8 +33,11 @@ export default function Contact() {
     reset,
   } = useForm();
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const onSubmit = async (data) => {
     try {
+      setIsLoading(true);
       await axios.post('/api/message', data);
       toast({ title: 'Message sent!', status: 'success', isClosable: true });
       reset();
@@ -45,13 +49,21 @@ export default function Contact() {
         status: 'error',
         isClosable: true,
       });
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <PageWrapper>
       <VStack w="100%">
-        <VStack w="88%" maxW="80em" alignItems="flex-start" spacing="2em">
+        <VStack
+          w="88%"
+          maxW="80em"
+          alignItems="flex-start"
+          spacing="2em"
+          mt={['2em', '1em']}
+        >
           <Heading size="3xl">Contact (coming soon)</Heading>
           <form
             css={css`
@@ -108,6 +120,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   style={{ marginTop: '1em' }}
+                  isLoading={isLoading}
                   disabled={true}
                 >
                   Submit

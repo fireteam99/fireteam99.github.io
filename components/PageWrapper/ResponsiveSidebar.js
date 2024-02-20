@@ -8,6 +8,7 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 
 import { motion } from 'framer-motion';
+import useIsClient from '../../hooks/useIsClient';
 
 const navLinks = [
   { href: '/', name: 'Home' },
@@ -106,11 +107,7 @@ function FloatingMenuButton() {
 }
 
 export default function ResponsiveSidebar({ shouldCollapse }) {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const isClient = useIsClient();
 
   return isClient && shouldCollapse ? (
     <FloatingMenuButton />

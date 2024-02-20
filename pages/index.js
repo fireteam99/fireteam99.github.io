@@ -13,6 +13,7 @@ import {
 import Image from 'next/image';
 import PageWrapper from '../components/PageWrapper';
 import { heading, timeline, links } from '../data/home';
+import useIsClient from '../hooks/useIsClient';
 
 function ExperienceBlock({
   url,
@@ -65,6 +66,8 @@ function ExperienceBlock({
 }
 
 export default function Home() {
+  const [isSmallerThan30em] = useMediaQuery('(max-width: 30em)');
+  const isClient = useIsClient();
   return (
     <PageWrapper>
       <VStack mt={['1em', '0em', '2em']} w="100%">
@@ -98,18 +101,22 @@ export default function Home() {
                   i
                 ) => (
                   <HStack key={organization + title} spacing="0em">
-                    <Box
-                      width=".1em"
-                      bg="light"
-                      height={
-                        i == 0 || i == timeline.length - 1 ? '50%' : '100%'
-                      }
-                      marginBottom={
-                        i == timeline.length - 1 ? 'auto' : 'initial'
-                      }
-                      marginTop={i == 0 ? 'auto' : 'initial'}
-                    />
-                    <Spacer width="1em" />
+                    {isClient && !isSmallerThan30em && (
+                      <>
+                        <Box
+                          width=".1em"
+                          bg="light"
+                          height={
+                            i == 0 || i == timeline.length - 1 ? '50%' : '100%'
+                          }
+                          marginBottom={
+                            i == timeline.length - 1 ? 'auto' : 'initial'
+                          }
+                          marginTop={i == 0 ? 'auto' : 'initial'}
+                        />
+                        <Spacer width="1em" />
+                      </>
+                    )}
                     <ExperienceBlock
                       url={url}
                       logo={logo}
