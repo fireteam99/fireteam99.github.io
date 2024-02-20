@@ -1,18 +1,12 @@
 import { useEffect, useState } from 'react';
 import { css, jsx } from '@emotion/react';
-import {
-  Box,
-  Button,
-  IconButton,
-  useDisclosure,
-  SlideFade,
-} from '@chakra-ui/react';
+import { Box, IconButton, useDisclosure, SlideFade } from '@chakra-ui/react';
 import { Flex, Heading } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
-import Link from 'next/Link';
+import Link from 'next/link';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const navLinks = [
   { href: '/', name: 'Home' },
