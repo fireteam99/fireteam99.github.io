@@ -1,7 +1,7 @@
 export const heading = {
   title: 'Hey there! 👋',
   description:
-    "I'm a full stack developer based in San Francisco currently working at Medallion. Previously, I worked at American Express and graduated from Rutgers University with a degree in Computer Science. Thanks for stopping by!",
+    "I'm a full stack developer based in San Francisco working at Medallion. Previously, I worked at American Express and graduated from Rutgers University with a degree in Computer Science. Thanks for stopping by!",
 };
 
 export const timeline = [

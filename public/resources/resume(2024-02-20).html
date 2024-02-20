@@ -1,0 +1,524 @@
+<!doctype html>
+<html>
+	<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+	
+	<title>Ray Sy</title>
+
+	<style>
+	body {
+  background: #eeeeee;
+  font: 10pt/1.4 "Helvetica", "Calibri", "Arial";
+  line-height: 1.4;
+  margin: 40px 0;
+}
+
+em {
+  color: #999;
+}
+
+p {
+  line-height: 1.4;
+  margin: 0.3em 0;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: #596e9f;
+}
+
+#resume {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 80px 100px;
+  background: #fff;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.022),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.032),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.04),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.048),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.058),
+    100px 100px 80px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5em;
+}
+
+.name {
+  font-family: "Garamond", "Cambria", "Times New Roman", "Times";
+}
+
+#nameBlock {
+  text-align: center;
+}
+
+.contactBlock {
+  text-align: center;
+}
+
+#profilesBlock {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.2em;
+}
+
+.coursesList {
+  width: 100%;
+  vertical-align: top;
+  display: inline-block;
+  column-count: 3;
+}
+
+.largeFont {
+  font-size: 25pt;
+}
+
+.smallFont {
+  font-size: 11pt;
+}
+
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sectionName {
+  font-family: "Garamond", "Cambria", "Times New Roman", "Times";
+  font-size: 18pt;
+  color: #2e2e2e;
+}
+
+.blockHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blockSubheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionContent {
+  width: 100%;
+  vertical-align: top;
+  display: inline-block;
+  padding-left: 8px;
+  border-left: 0.2em solid #ced5e3;
+}
+
+.sectionContent ul {
+  padding-left: 20px;
+  margin-top: 6px;
+  list-style-type: disc;
+}
+
+.sectionContent .title {
+  font: 13pt "Garamond", "Cambria", "Times New Roman", "Times";
+  font-weight: bold;
+}
+
+.sectionContent .separator {
+  height: 14px;
+}
+
+.sectionContent li,
+.description {
+  font: 10pt/1.4 "Helvetica", "Calibri", "Arial";
+}
+
+.sectionContent .date,
+.location,
+.score, .position, .roles {
+  font: 11pt/1.4 "Garamond", "Cambria", "Times New Roman", "Times";
+}
+
+.sectionLine {
+  border-style: dashed;
+  border-width: 0.01em;
+  border-color: #ebedf3;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.divider {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.summary {
+  font-style: italic;
+  margin-top: 6px;
+}
+
+.skillBlock {
+  margin-bottom: 4px;
+}
+
+.jobBlock {
+  page-break-inside: avoid;
+}
+
+.description {
+  font-style: italic;
+  text-align: left;
+}
+
+blockquote.reference {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 846px) {
+  #resume {
+    padding: 30px 50px;
+  }
+}
+
+@media only screen and (max-width: 718px) {
+  #resume {
+    padding: 30px 18px;
+  }
+  .sectionBlock {
+    width: 98%;
+  }
+}
+
+@media only screen and (max-width: 694px) {
+  body {
+    margin: 0;
+    font-size: 12pt;
+  }
+  #resume {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 2em 2em;
+    border: none;
+  }
+  .sectionBlock {
+    flex-direction: column;
+  }
+  .sectionContent {
+    width: 100%;
+  }
+  .sectionName {
+    font-size: 20pt;
+  }
+  .largeFont {
+    font-size: 28pt;
+  }
+  .smallFont {
+    font-size: 14px;
+  }
+  .blockHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .blockSubheader {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .sectionLine {
+    margin: 20px 0;
+  }
+  .sectionContent li {
+    font-size: 12pt;
+  }
+  .sectionContent .title {
+    font-size: 14pt;
+    font-weight: bold;
+  }
+  .sectionContent .description {
+    font-size: 12pt;
+  }
+  .sectionContent ul {
+    margin-top: 6px;
+  }
+  .sectionContent .separator {
+    height: 7px;
+  }
+  .coursesList {
+    column-count: 1;
+  }
+  #nameBlock {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #resume {
+    padding: 1.5em 1em;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #resume {
+    padding: 1em 0.5em;
+  }
+}
+
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 0;
+    max-width: 8.5in;
+  }
+  body {
+    background: #ffffff;
+    font-size: 10pt;
+    margin: .5in .9in;
+  }
+  #resume {
+    padding: 0px;
+    border: 0px;
+    background: #fff;
+    box-shadow: none;
+    max-width: 8.5in;
+  }
+  a {
+    color: black;
+  }
+  .skillBlock {
+      margin-bottom: 0;
+  }
+  .largeFont {
+    font-size: 20pt;
+  }
+  .smallFont {
+    font-size: 10pt;
+  }
+  .sectionName {
+    font-size: 13.5pt;
+  }
+  .sectionLine {
+    margin: 7px 0;
+  }
+  .sectionContent li {
+    font-size: 8pt;
+  }
+  .sectionContent .date, .location, .score, .position, .roles {
+    font-size: 10pt;
+  }
+  .sectionContent .title {
+    font-size: 11pt;
+    font-weight: bold;
+  }
+  .sectionContent ul {
+    margin-top: 3px;
+  }
+  .sectionContent .separator {
+    height: 7px;
+  }
+  .sectionContent .description {
+    font-size: 10pt;
+  }
+  .summary {
+    font-size: 8.5pt;
+  }
+}
+
+	</style>
+	
+	</head>
+	<body>
+	
+	<div id="resume">
+		<div id='nameBlock' class='largeFont'>
+			<span class='name'>
+				Ray Sy
+			</span>
+		</div>
+		<div id='basicsBlock' class='smallFont'>
+			<div class='contactBlock'>
+				<span class='email'><a href="mailto:raysydev@gmail.com">raysydev@gmail.com</a></span>
+					<span class='divider'>|</span>
+					<span class='url'>
+						<a href='https://raysy.dev'>https://raysy.dev</a>
+					</span>
+			</div>
+			<div id='profilesBlock'>
+				<span class='url'>
+					<b>Github:</b> <a href='https://github.com/fireteam99'>https://github.com/fireteam99</a>
+				</span>
+				<span class='divider'> </span>
+				<span class='url'>
+					<b>LinkedIn:</b> <a href='https://www.linkedin.com/in/ray-sy/'>https://www.linkedin.com/in/ray-sy/</a>
+				</span>
+				
+			</div>
+		</div>
+		
+		<hr class='sectionLine' />
+		<div id='workBlock' class="sectionBlock">
+			<div class='sectionName'>
+				<span>Experience</span>
+			</div>
+			<div class='sectionContent'>
+				<div class="jobBlock">
+					<div class='blockHeader'>
+						<spam>
+							<span class='title'>Medallion</span>
+							 | <span class="position">Software Engineer</span>
+						</spam>
+						<span class='date'>
+							Jun 2021 - Present
+						</span>
+					</div>
+					<div class="blockSubheader"><a href='https://medallion.co'>https://medallion.co</a><span class="location">San Francisco, CA</span>
+					</div>
+					<div class="summary">
+						<p>Developed performant, automation-centric product initiatives as a full-stack engineer utilizing Django, React, and GraphQL at a fast moving health-tech startup.</p>
+					</div>
+					<ul class='highlights'>
+						<li>Pioneered GraphQL at Medallion by handling the initial integration, migrating inefficient REST endpoints, and cultivating an active community - improving app performance, code architecture, and development velocity.</li>
+						<li>Built a robust email notification system for our high-throughput provider import pipeline using Celery and Customer.io - decreasing turn around times by 30%.</li>
+						<li>Integrated a battle-tested verifications service using Celerybeat and Pusher into the credentialing platform, ensuring real-time provider compliance while streamlining operational efficiency.</li>
+					</ul>
+					<div class='separator'></div>
+				</div>
+				<div class="jobBlock">
+					<div class='blockHeader'>
+						<spam>
+							<span class='title'>American Express</span>
+							 | <span class="position">Software Engineer</span>
+						</spam>
+						<span class='date'>
+							Jan 2021 - May 2022
+						</span>
+					</div>
+					<div class="blockSubheader"><a href='https://americanexpress.com'>https://americanexpress.com</a><span class="location">New York, NY</span>
+					</div>
+					<div class="summary">
+						<p>Developed site/infrastructure related features and enhancements as a full stack engineer on Amex&#x27;s GCS Commercial team using React, Redux, and GraphQL - making a combined impact of several hundred million dollars annually.</p>
+					</div>
+					<ul class='highlights'>
+						<li>Executed multiple successful A/B tests, notably creating an enhanced mobile horizontal carousel that projected an annual incremental revenue boost of $150M.</li>
+						<li>Spearheaded site-wide accessibility enhancements by cataloging outstanding violations while working closely with PMs and developers to reduce the number of issues by over 95%.</li>
+						<li>Created and popularized an internal Chrome extension to automate syncing authentication cookies between local and test environments - improving developer experience and cutting workflow times by 90%.</li>
+					</ul>
+					<div class='separator'></div>
+				</div>
+				<div class="jobBlock">
+					<div class='blockHeader'>
+						<spam>
+							<span class='title'>American Express</span>
+							 | <span class="position">Software Engineering Intern</span>
+						</spam>
+						<span class='date'>
+							Jun 2020 - Aug 2020
+						</span>
+					</div>
+					<div class="blockSubheader"><a href='https://americanexpress.com'>https://americanexpress.com</a><span class="location">New York, NY</span>
+					</div>
+					<div class="summary">
+						<p>Created Experience Builder - a tool that empowers non-engineers to generate production ready UI variations for consumer facing sites.</p>
+					</div>
+					<ul class='highlights'>
+						<li>Designed a “composer” UI using React.js featuring an interactive canvas, sortable layer tree, widget palette, and export panel, making it intuitive to create components compliant with standardized design guidelines.</li>
+						<li>Engineered a persistence and versioning system that allowed multiple users to collaborate concurrently on a composition using PostgreSQL and Express.js.</li>
+					</ul>
+					<div class='separator'></div>
+				</div>
+				<div class="jobBlock">
+					<div class='blockHeader'>
+						<spam>
+							<span class='title'>Heat.wav</span>
+							 | <span class="position">Technical Co-Founder</span>
+						</spam>
+						<span class='date'>
+							Aug 2018 - Sep 2022
+						</span>
+					</div>
+					<div class="blockSubheader"><a href='https://heatwav.co'>https://heatwav.co</a><span class="location">New York, NY</span>
+					</div>
+					<div class="summary">
+						<p>Led technical development of a location-based music &amp; artist discovery platform that placed in the quarter finals at NYU InnoVention, and semi finals at RU Innovators.</p>
+					</div>
+					<ul class='highlights'>
+						<li>Designed and architected Heat.wav&#x27;s tech stack to fit current and anticipated product needs while setting technical standards to ensure a maintainable codebase.</li>
+						<li>Collaborated closely with our designer, product expert, and co-developers to effectively translate and delegate feature requests and wireframes into detailed objectives using Asana, Invision, and Slack.</li>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+		<hr class='sectionLine' />
+		<div id='education' class="sectionBlock">
+			<div class='sectionName'>
+				<span>Education</span>
+			</div>
+			<div class='sectionContent'>
+				<div class='educationBlock'>
+					<div class="blockHeader">
+					<span class='title'>
+						Rutgers University, New Brunswick, NJ
+					</span>
+					<span class='date'>
+						Sep 2017 - Dec 2020
+					</span>
+		
+					</div>
+					<div class='blockHeader'>
+						<span>Bachelor of Science  - Computer Science</span><span class="score">GPA: 3.74</span>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<hr class='sectionLine' />
+		<div id='skills' class="sectionBlock">
+			<div class='sectionName'>
+				<span>Skills</span>
+			</div>
+			<div class='sectionContent'>
+				<div class='skillBlock'>
+					<span class='title'>Languages:</span>
+					<span class="smallFont">Javascript</span>, 
+					<span class="smallFont">Python</span>, 
+					<span class="smallFont">SQL</span>, 
+					<span class="smallFont">Java</span>, 
+					<span class="smallFont">C</span>, 
+					<span class="smallFont">Dart</span>, 
+					<span class="smallFont">Shell</span>, 
+					<span class="smallFont">HTML</span>, 
+					<span class="smallFont">CSS</span>
+				</div>
+				<div class='skillBlock'>
+					<span class='title'>Frameworks/Tools:</span>
+					<span class="smallFont">React</span>, 
+					<span class="smallFont">Django</span>, 
+					<span class="smallFont">Express</span>, 
+					<span class="smallFont">Next.js</span>, 
+					<span class="smallFont">Flask</span>, 
+					<span class="smallFont">Flutter</span>, 
+					<span class="smallFont">Sketch</span>, 
+					<span class="smallFont">Figma</span>
+				</div>
+				<div class='skillBlock'>
+					<span class='title'>Technologies:</span>
+					<span class="smallFont">GraphQL</span>, 
+					<span class="smallFont">PostgreSQL</span>, 
+					<span class="smallFont">MongoDB</span>, 
+					<span class="smallFont">Docker</span>, 
+					<span class="smallFont">AWS</span>, 
+					<span class="smallFont">Heroku</span>, 
+					<span class="smallFont">Firebase</span>, 
+					<span class="smallFont">Redis</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

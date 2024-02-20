@@ -52,7 +52,7 @@ export default function Contact() {
     <PageWrapper>
       <VStack w="100%">
         <VStack w="88%" maxW="80em" alignItems="flex-start" spacing="2em">
-          <Heading size="3xl">Contact</Heading>
+          <Heading size="3xl">Contact (coming soon)</Heading>
           <form
             css={css`
               width: 100%;
@@ -60,7 +60,7 @@ export default function Contact() {
             `}
             onSubmit={handleSubmit(onSubmit)}
           >
-            <FormControl>
+            <FormControl isDisabled={true}>
               <VStack alignItems="start">
                 <Box w="100%">
                   <FormLabel htmlFor="name">Name *</FormLabel>
@@ -105,7 +105,11 @@ export default function Contact() {
                   />
                   <FieldError error={errors.message} />
                 </Box>
-                <Button type="submit" style={{ marginTop: '1em' }}>
+                <Button
+                  type="submit"
+                  style={{ marginTop: '1em' }}
+                  disabled={true}
+                >
                   Submit
                 </Button>
               </VStack>

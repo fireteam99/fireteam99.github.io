@@ -32,6 +32,10 @@ export const resumes = [
     html: 'resume(2022-01-15).html',
     pdf: 'resume(2022-01-15).pdf',
   },
+  {
+    html: 'resume(2024-02-20).html',
+    pdf: 'resume(2024-02-20).pdf',
+  },
 ]
   .map((resume) => ({
     ...resume,
