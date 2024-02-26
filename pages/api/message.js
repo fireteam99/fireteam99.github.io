@@ -1,20 +1,25 @@
-import sgMail from '@sendgrid/mail';
+import * as FormData from 'form-data';
+import Mailgun from 'mailgun.js';
 
 export default async function handler(req, res) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  const mailgun = new Mailgun(FormData);
+  const mg = mailgun.client({
+    username: 'api',
+    key: process.env.MAILGUN_API_KEY,
+  });
 
   const { name, email, subject, message } = req.body;
 
-  const msg = {
-    to: process.env.CONTACT_EMAIL, // Change to your recipient
-    from: process.env.FROM_EMAIL, // Change to your verified sender
-    subject,
-    text: `${name}\n${email}\n${message}`,
+  const params = {
+    from: `Portfolio Contact <mailgun@${process.env.MAILGUN_DOMAIN}>`,
+    to: [process.env.CONTACT_EMAIL],
+    subject: `[Portfolio Contact] ${subject}`,
+    text: `${name}\n${email}\n\n${message}`,
   };
 
   try {
-    const response = await sgMail.send(msg);
-    res.status(response[0].statusCode).json(response[0].headers);
+    const msg = await mg.messages.create(process.env.MAILGUN_DOMAIN, params);
+    res.status(201).json(msg);
   } catch (err) {
     console.error(err);
     res.status(500).json(err);

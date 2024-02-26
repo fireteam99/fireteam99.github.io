@@ -64,7 +64,7 @@ export default function Contact() {
           spacing="2em"
           mt={['2em', '1em']}
         >
-          <Heading size="3xl">Contact (coming soon)</Heading>
+          <Heading size="3xl">Contact</Heading>
           <form
             css={css`
               width: 100%;
@@ -72,7 +72,7 @@ export default function Contact() {
             `}
             onSubmit={handleSubmit(onSubmit)}
           >
-            <FormControl isDisabled={true}>
+            <FormControl>
               <VStack alignItems="start">
                 <Box w="100%">
                   <FormLabel htmlFor="name">Name *</FormLabel>
@@ -121,7 +121,6 @@ export default function Contact() {
                   type="submit"
                   style={{ marginTop: '1em' }}
                   isLoading={isLoading}
-                  disabled={true}
                 >
                   Submit
                 </Button>
